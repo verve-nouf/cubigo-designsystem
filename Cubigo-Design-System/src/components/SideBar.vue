@@ -16,15 +16,19 @@
         <div class="item" id="item1">
           <label for="item1-toggle" class="item-label">
             <div class="item-header">
-              <h3>Overview</h3>
+              <h3>Components</h3>
               <div class="indicator-icon">
                 <img src="/src/assets/indicator-closed.svg" alt="indicator-closed-image">
               </div>
             </div>
           </label>
           <div class="sub-items">
-            <div class="sub-item">Sub-Item 1.1</div>
-            <div class="sub-item">Sub-Item 1.2</div>
+            <div class="sub-item">
+              <router-link to="/overview">
+                <a class="active">Buttons</a>
+              </router-link>
+            </div>
+            <div class="sub-item"><a class="active">Sub-Item 1.2</a></div>
           </div>
         </div>
 
@@ -80,7 +84,7 @@
         <div class="item" id="item5">
           <label for="item5-toggle" class="item-label">
             <div class="item-header">
-              <h3>Components</h3>
+              <h3>Overview</h3>
               <div class="indicator-icon">
                 <img src="/src/assets/indicator-closed.svg" alt="indicator-closed-image">
               </div>
@@ -175,6 +179,10 @@ export default {
   margin-left: auto;
 }
 
+.sidebar-items .indicator-icon img {
+  width: 12px;
+}
+
 .sidebar-items .sub-item {
   margin: 4px 0;
 }
@@ -187,10 +195,14 @@ export default {
 .item-header h3 {
   color: #000;
   font-family: Lato, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+.item-header:hover h3 {
+  color: #0092E1;
 }
 
 .sub-items .sub-item {
@@ -202,6 +214,15 @@ export default {
   line-height: normal;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+
+a:active {
+}
+
+.sub-items .sub-item a {
+  text-decoration: none;
+  color: #0092E1;
 }
 
 .sidebar-items .sub-items {
@@ -223,23 +244,18 @@ export default {
   padding-bottom: 15px;
 }
 
-/* Styles for screens smaller than 768px (e.g., smartphones in portrait mode) */
 @media only screen and (max-width: 767px) {
 }
 
-/* Styles for screens between 768px and 1023px (e.g., tablets in portrait mode) */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
 }
 
-/* Styles for screens between 1024px and 1279px (e.g., tablets in landscape mode, smaller desktops) */
 @media only screen and (min-width: 1024px) and (max-width: 1279px) {
 }
 
-/* Styles for screens between 1280px and 1439px (e.g., larger desktops) */
 @media only screen and (min-width: 1280px) and (max-width: 1439px) {
 }
 
-/* Styles for screens 1440px and larger (e.g., widescreen desktops) */
 @media only screen and (min-width: 2000px) {
   .sidebar-logo img {
     width: 180px;
@@ -265,7 +281,6 @@ export default {
   .sub-items .sub-item {
     font-size: 1.5rem;
   }
-
 
 }
 </style>
