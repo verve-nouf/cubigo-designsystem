@@ -6,10 +6,15 @@
         <section class="hero">
           <div class="hero-items">
             <div class="hero-banner">
-              <h3>Design.<br>
-                Develop.<br>
-                Deliver.</h3>
-
+              <h3>
+                Design.
+              </h3>
+              <h3 id="develop-banner">
+                Develop.
+              </h3>
+              <h3 id="deliver-banner">
+                Deliver.
+              </h3>
             </div>
             <div class="hero-image">
               <img src="/src/assets/hero-image.svg" alt="hero-image">
@@ -41,6 +46,8 @@
           </div>
         </section>
 
+
+
       </div>
     </div>
 
@@ -57,6 +64,18 @@ import Footer from "@/components/Footer.vue";
 </script>
 
 <style scoped>
+#deliver-banner {
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+}
+
+#develop-banner {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
 
 .page-container {
   position: relative;
@@ -88,7 +107,7 @@ import Footer from "@/components/Footer.vue";
 .content-button h3 {
   color: #000;
   font-family: "Tiempos Fine", sans-serif;
-  font-size: 2.1875rem;
+  font-size: 1.8875rem;
   font-style: normal;
   font-weight: 700;
 }
@@ -137,17 +156,50 @@ import Footer from "@/components/Footer.vue";
   margin-bottom: 45px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
+  .page-seperator {
+    margin-left: 25vw;
+  }
 
+  .hero-banner h3 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .hero-image img {
+    width: 200px;
+  }
+
+  .content-button h3 {
+    font-size: 1rem;
+  }
+
+  .content-button p {
+    font-size: 0.75rem;
+  }
+
+  .tile {
+    height: 75px;
+  }
+
+  .hero {
+    margin-left: 25vw;
+  }
+
+  .hero-content-block {
+    margin-left: 25vw;
+  }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-}
+@media only screen and (min-width: 1024px) {
+  .hero-banner h3 {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
 
-@media only screen and (min-width: 1024px) and (max-width: 1279px) {
-}
-
-@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+  .hero-image img {
+    width: 315px;
+  }
 }
 
 @media only screen and (min-width: 2000px) {
@@ -183,6 +235,10 @@ import Footer from "@/components/Footer.vue";
     font-size: 1.50rem;
   }
 
+  .tile {
+    height: 220px;
+  }
+
   .hero h3 {
     margin-top: 10vh;
   }
@@ -191,9 +247,7 @@ import Footer from "@/components/Footer.vue";
     margin-top: 10vh;
   }
 
-  .tile {
-    height: 220px;
-  }
+
 }
 
 </style>

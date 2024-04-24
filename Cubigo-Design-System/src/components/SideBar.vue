@@ -25,10 +25,16 @@
           <div class="sub-items">
             <div class="sub-item">
               <router-link to="/overview">
-                <a class="active">Buttons</a>
+                <a class="active">
+                    Buttons
+                </a>
               </router-link>
             </div>
-            <div class="sub-item"><a class="active">Sub-Item 1.2</a></div>
+            <div class="sub-item">
+              <a class="active">
+                  Sub-Item 1.2
+              </a>
+            </div>
           </div>
         </div>
 
@@ -122,13 +128,13 @@ export default {
 }
 
 .search-bar input {
-  height: 28px;
+  height: 36px;
   width: 100%;
-  border-radius: 6px;
-  border: none;
-  background-color: #EBEBEB;
+  border-radius: 50px;
+  background-color: transparent;
+  border: solid 1px #007AFF;
   padding-left: 15px;
-  color: #616161;
+  color: #007AFF;
   font-family: Lato, "sans-serif";
   font-size: 0.875rem;
   font-style: normal;
@@ -160,6 +166,7 @@ export default {
 .sidebar-items .toggle-checkbox:checked + .item .sub-items {
   display: block;
 }
+
 
 .sidebar-items .sub-items {
   display: none;
@@ -199,6 +206,10 @@ export default {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+.indicator-icon img {
+  height: 15px;
 }
 
 .item-header:hover h3 {
@@ -244,16 +255,11 @@ a:active {
   padding-bottom: 15px;
 }
 
-@media only screen and (max-width: 767px) {
-}
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1279px) {
-}
-
-@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+@media only screen and (max-width: 768px) {
+  .sidebar-content {
+    width: 30vw;
+  }
 }
 
 @media only screen and (min-width: 2000px) {
