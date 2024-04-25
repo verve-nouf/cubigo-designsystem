@@ -5,7 +5,7 @@
         <img src="/src/assets/cubigo-logo.svg" alt="cubigo-logo">
       </div>
       <div class="search-bar">
-        <input type="text" placeholder="Search...">
+        <input style="color: #007AFF" type="text" placeholder="Search...">
       </div>
       <div class="sidebar-separator">
         <hr>
@@ -120,6 +120,10 @@ export default {
   height: 100vh;
   border: 0.5px solid #DFDFDF;
   box-shadow: 1px 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+::placeholder {
+  color: #0092E1;
 }
 
 .sidebar-logo {
@@ -261,6 +265,7 @@ a:active {
     width: 30vw;
   }
 }
+
 
 @media only screen and (min-width: 2000px) {
   .sidebar-logo img {

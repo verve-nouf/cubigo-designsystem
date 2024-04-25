@@ -28,24 +28,88 @@
 
         <section class="hero-content-block">
           <div class="content-button">
-            <h3>Get Started</h3>
-            <p>Develop, construct and deliver seamless
-              interactions using Cubigo’s latest design system.</p>
-            <div class="tile">
-
-            </div>
-          </div>
-
-          <div class="content-button">
             <h3>Figma UI-kit</h3>
             <p>Develop, construct and deliver seamless
               interactions using Cubigo’s latest design system.</p>
             <div class="tile">
+              <img src="/src/assets/figma-block.svg" alt="figma-image-block">
+            </div>
+          </div>
 
+          <div class="content-button">
+            <h3>Guidelines</h3>
+            <p>Develop, construct and deliver seamless
+              interactions using Cubigo’s latest design system.</p>
+            <div class="tile">
+              <img src="/src/assets/guidelines-block.svg" alt="guidelines-image-block">
             </div>
           </div>
         </section>
 
+        <section class="component-section-block">
+          <div class="title-section">
+            <h3>Components</h3>
+          </div>
+
+          <div class="content-section">
+            <div class="text-section">
+              <a>
+                Buttons
+              </a>
+              <a>
+                Inputs
+              </a>
+              <a>
+                Grids
+              </a>
+            </div>
+            <div class="animation-section">
+              <img src="/src/assets/button-hover-image.svg" alt="">
+            </div>
+          </div>
+        </section>
+
+
+        <section class="resource-section-block">
+          <div class="title-section">
+            <h3>Resources</h3>
+          </div>
+
+          <div class="content-section">
+            <div class="resource-image">
+              <img src="/src/assets/img.png" alt="" srcset="">
+            </div>
+            <div class="resource-text">
+              <div class="resource-item">
+                <a>Linkje 1 </a>
+                <hr>
+              </div>
+              <div class="resource-item">
+                <a>Linkje 2 </a>
+                <hr>
+              </div>
+              <div class="resource-item">
+                <a>Linkje 3 </a>
+                <hr>
+              </div>
+
+            </div>
+            <div class="resource-text">
+              <div class="resource-item">
+                <a>Linkje 4 </a>
+                <hr>
+              </div>
+              <div class="resource-item">
+                <a>Linkje 5 </a>
+                <hr>
+              </div>
+              <div class="resource-item">
+                <a>Linkje 6 </a>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </section>
 
 
       </div>
@@ -54,13 +118,32 @@
   </main>
 
   <footer>
-    <Footer> </Footer>
+    <Footer></Footer>
   </footer>
 </template>
 
 <script setup>
+// Import Vue components
 import SideBar from "@/components/SideBar.vue";
 import Footer from "@/components/Footer.vue";
+
+// Add event listener to handle hover effect
+window.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.text-section a');
+  const image = document.querySelector('.animation-section img');
+
+  links.forEach(link => {
+    link.addEventListener('mouseover', () => {
+      image.style.opacity = '1'; // Ensure opacity is set to 1 initially
+      image.style.right = '0'; // Ensure the image is fully visible initially
+    });
+
+    link.addEventListener('mouseout', () => {
+      image.style.opacity = '0'; // Set opacity to 0 to fade out the image
+      image.style.right = '-100%'; // Move the image out of the viewport to the right
+    });
+  });
+});
 </script>
 
 <style scoped>
@@ -112,6 +195,26 @@ import Footer from "@/components/Footer.vue";
   font-weight: 700;
 }
 
+.resource-image img {
+  width: 250px;
+}
+
+.resource-text a {
+  font-size: 1.25rem;
+  font-family: Lato, sans-serif;
+  display: block;
+
+}
+
+.resource-item {
+  width: 200px;
+}
+
+.resource-item hr {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
 .content-button p {
   color: #000;
   font-family: Lato, sans-serif;
@@ -122,11 +225,43 @@ import Footer from "@/components/Footer.vue";
   letter-spacing: 0.03125rem;
 }
 
-.tile {
+.title-section h3 {
+  margin-bottom: 10vh;
+}
+
+.text-section a {
+  font-family: "Tiempos Fine", sans-serif;
+  font-weight: 100;
+  font-size: 5rem;
+  margin-bottom: 15vh;
+  text-decoration: none;
+  display: block;
+}
+
+.content-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.animation-section img {
+
+  top: 0;
+  right: -100%; /* Initially position the image outside of the viewport */
+  opacity: 0; /* Initially set opacity to 0 to hide the image */
+  transition: opacity 0.75s ease, right 0.85s ease; /* Add transition for opacity and right position */
+}
+
+
+
+/*.tile {
   height: 125px;
   width: 100%;
   border: 1px black solid;
   border-radius: 5px;
+}*/
+
+.tile img {
+  width: 100%;
 }
 
 .hero-items {
@@ -147,6 +282,22 @@ import Footer from "@/components/Footer.vue";
   justify-content: space-between;
   padding: 0 80px 0 80px;
   margin-left: 20vw;
+}
+
+.resource-section-block {
+  padding: 0 80px 0 80px;
+  margin-top: 15vh;
+  margin-left: 20vw;
+}
+
+.component-section-block {
+  padding: 0 80px 0 80px;
+  margin-top: 15vh;
+  margin-left: 20vw;
+}
+
+.title-section h3 {
+  font-size: 2rem;
 }
 
 .page-seperator {
