@@ -56,6 +56,12 @@ footer {
   padding-top: 65px;
 }
 
+@media only screen and (max-width: 414px) {
+  .footer {
+    margin-left: 0 !important;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .footer {
     margin-left: 30vw;

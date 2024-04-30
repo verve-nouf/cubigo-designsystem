@@ -1,5 +1,10 @@
 <template>
-  <div class="sidebar">
+  <div class="hamburger-menu">
+    <button @click="toggleSidebar">
+      MENU
+    </button>
+  </div>
+  <div class="sidebar" :class="{ 'open': isSidebarOpen }">
     <div class="sidebar-content">
       <div class="sidebar-logo">
         <img src="/src/assets/cubigo-logo.svg" alt="cubigo-logo">
@@ -31,9 +36,12 @@
               </router-link>
             </div>
             <div class="sub-item">
-              <a class="active">
-                  Sub-Item 1.2
-              </a>
+              <router-link to="/inputs">
+                <a class="active">
+                  Inputs
+                </a>
+              </router-link>
+
             </div>
           </div>
         </div>
@@ -108,8 +116,19 @@
 
 <script>
 export default {
-  name: "SideBar"
+  name: "SideBar",
+  data() {
+    return {
+      isSidebarOpen: false,
+    };
+  },
+  methods: {
+    toggleSidebar() {
+      this.isSidebarOpen = !this.isSidebarOpen;
+    }
+  }
 };
+
 </script>
 
 <style scoped>
@@ -121,6 +140,16 @@ export default {
   border: 0.5px solid #DFDFDF;
   box-shadow: 1px 0 4px 0 rgba(0, 0, 0, 0.25);
 }
+
+.sidebar.open {
+  display: block;
+  background-color: white;
+}
+
+.sidebar.open .sidebar-content {
+  width: 60vw;
+}
+
 
 ::placeholder {
   color: #0092E1;
@@ -136,7 +165,7 @@ export default {
   width: 100%;
   border-radius: 50px;
   background-color: transparent;
-  border: solid 1px #007AFF;
+  border: solid 1px #000000;
   padding-left: 15px;
   color: #007AFF;
   font-family: Lato, "sans-serif";
@@ -259,6 +288,25 @@ a:active {
   padding-bottom: 15px;
 }
 
+@media only screen and (max-width: 414px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+
+@media only screen and (min-width: 415px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 414px) {
+  .hamburger-menu {
+    padding: 0 80px 0 80px;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .sidebar-content {
