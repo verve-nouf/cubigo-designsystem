@@ -1,13 +1,15 @@
 <template>
   <div class="hamburger-menu">
     <button @click="toggleSidebar">
-      MENU
+      <img src="/src/assets/hamburger.svg">
     </button>
   </div>
   <div class="sidebar" :class="{ 'open': isSidebarOpen }">
     <div class="sidebar-content">
       <div class="sidebar-logo">
-        <img src="/src/assets/cubigo-logo.svg" alt="cubigo-logo">
+        <router-link to="/">
+          <img src="/src/assets/cubigo-logo.svg" alt="cubigo-logo">
+        </router-link>
       </div>
       <div class="search-bar">
         <input style="color: #007AFF" type="text" placeholder="Search...">
@@ -224,7 +226,7 @@ export default {
 }
 
 .sidebar-items .sub-item {
-  margin: 4px 0;
+  margin: 8px 0;
 }
 
 .sidebar-content {
@@ -249,6 +251,7 @@ export default {
   color: #0092E1;
 }
 
+
 .sub-items .sub-item {
   color: #0092E1;
   font-family: Lato, sans-serif;
@@ -256,18 +259,27 @@ export default {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
 
 
-a:active {
 }
 
 .sub-items .sub-item a {
+  font-weight: 300;
   text-decoration: none;
+  display: flex;
+  justify-content: space-between;
   color: #0092E1;
+  padding: 3px 6px;
 }
+
+
+.sub-item:hover a {
+  background-color: #1990EA;
+
+  border-radius: 100px;
+  color: white;
+}
+
 
 .sidebar-items .sub-items {
   display: block;
@@ -288,6 +300,7 @@ a:active {
   padding-bottom: 15px;
 }
 
+
 @media only screen and (max-width: 414px) {
   .sidebar {
     display: none;
@@ -305,7 +318,17 @@ a:active {
 @media only screen and (max-width: 414px) {
   .hamburger-menu {
     padding: 0 80px 0 80px;
+    margin-left: 45vw;
+    margin-top: 25px;
+    z-index: 100;
+    position: absolute;
   }
+
+  .hamburger-menu button {
+    background-color: #0092E1;
+    border: none;
+  }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -340,6 +363,7 @@ a:active {
   .sub-items .sub-item {
     font-size: 1.5rem;
   }
+
 
 }
 </style>

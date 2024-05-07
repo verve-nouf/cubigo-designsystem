@@ -6,7 +6,7 @@
         <section class="hero">
           <div class="hero-items">
             <div class="hero-banner">
-              <h3>
+              <h3 id="design-h3">
                 Design.
               </h3>
               <h3 id="develop-banner">
@@ -17,7 +17,7 @@
               </h3>
             </div>
             <div class="hero-image">
-              <img src="/src/assets/hero-image.svg" alt="hero-image">
+                <img src="/src/assets/hero-image.svg" alt="hero-image">
             </div>
           </div>
         </section>
@@ -50,7 +50,7 @@
 
         <section class="component-section-block">
           <div class="title-section">
-            <h3>Components</h3>
+            <h3>Some of our <span id="blue-part">components</span></h3>
           </div>
 
           <div class="content-section">
@@ -74,39 +74,35 @@
 
         <section class="resource-section-block">
           <div class="title-section">
-            <h3>Resources</h3>
+            <h3>Our <span id="blue-part">resources</span></h3>
           </div>
 
           <div class="content-section">
             <div class="resource-image">
-              <img src="/src/assets/img.png" alt="" srcset="">
+              <img src="/src/assets/resources.svg" alt="" srcset="">
             </div>
             <div class="resource-text">
               <div class="resource-item">
-                <a>Linkje 1 </a>
+                <a>Accesibility </a>
                 <hr>
               </div>
               <div class="resource-item">
-                <a>Linkje 2 </a>
+                <a>GitHub </a>
                 <hr>
               </div>
               <div class="resource-item">
-                <a>Linkje 3 </a>
+                <a>Figma </a>
                 <hr>
               </div>
 
             </div>
             <div class="resource-text">
               <div class="resource-item">
-                <a>Linkje 4 </a>
+                <a>Content design </a>
                 <hr>
               </div>
               <div class="resource-item">
-                <a>Linkje 5 </a>
-                <hr>
-              </div>
-              <div class="resource-item">
-                <a>Linkje 6 </a>
+                <a>Design guidelines </a>
                 <hr>
               </div>
             </div>
@@ -155,12 +151,21 @@ window.addEventListener('DOMContentLoaded', () => {
   font-weight: 100;
 }
 
+
+#blue-part {
+  color: #0092E1;
+  font-weight: 500 !important;
+}
+
 #develop-banner {
   margin: 0;
   padding: 0;
   font-weight: 500;
 }
 
+#design-h3 {
+  color: #0092E1;
+}
 
 .page-container {
   position: relative;
@@ -172,6 +177,9 @@ window.addEventListener('DOMContentLoaded', () => {
   margin-left: 20vw;
 }
 
+*:focus {
+  outline: none;
+}
 .hero-banner h3 {
   font-family: "Tiempos Fine", sans-serif;
   color: #000;
@@ -208,12 +216,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
 }
 
+.resource-text a:hover {
+  color: #0092E1;
+}
+
+
 .resource-item {
-  width: 200px;
+  width: 250px;
 }
 
 .resource-item hr {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 10px;
 }
 
@@ -229,6 +242,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 .title-section h3 {
   margin-bottom: 10vh;
+  font-weight: 300;
 }
 
 .text-section a {
@@ -246,11 +260,10 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 
 .animation-section img {
-
   top: 0;
-  right: -100%; /* Initially position the image outside of the viewport */
-  opacity: 0; /* Initially set opacity to 0 to hide the image */
-  transition: opacity 0.75s ease, right 0.85s ease; /* Add transition for opacity and right position */
+  right: -100%;
+  opacity: 0;
+  transition: opacity 0.75s ease, right 0.85s ease;
 }
 
 
@@ -299,7 +312,9 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 
 .title-section h3 {
-  font-size: 2rem;
+  font-size: 3.75rem;
+  font-weight: 300;
+
 }
 
 .page-seperator {
@@ -432,6 +447,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
   .hero-image img {
     width: 315px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .hero-banner h3 {
+    font-size: 5.5rem;
+    line-height: 6rem;
+  }
+
+  .hero-image img {
+    width: 400px;
   }
 }
 

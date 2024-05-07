@@ -104,7 +104,7 @@ export default {
 }
 
 .content-hero {
-  padding: 10vh 45px 0 45px;
+  padding: 10vh 80px 0 80px;
   margin-left: 20vw;
 }
 
@@ -182,6 +182,17 @@ export default {
 .article-content .article-image {
   margin-top: 30px;
   margin-bottom: 120px;
+}
+
+@media only screen and (max-width: 414px) {
+  .article-image img {
+    width: 100%;
+  }
+
+  .content-hero {
+    margin-left: 0;
+  }
+
 }
 
 </style>
