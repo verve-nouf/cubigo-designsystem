@@ -55,18 +55,18 @@
 
           <div class="content-section">
             <div class="text-section">
-              <a>
+              <a id="hoverOne">
                 Buttons
               </a>
-              <a>
+              <a id="hoverTwo">
                 Inputs
               </a>
-              <a>
-                Grids
+              <a id="hoverThree">
+                Tags
               </a>
             </div>
             <div class="animation-section">
-              <img src="/src/assets/button-hover-image.svg" alt="">
+              <img id="animation-block" src="/src/assets/button-hover-image.svg" alt="">
             </div>
           </div>
         </section>
@@ -128,9 +128,51 @@ import Footer from "@/components/Footer.vue";
 
 window.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll('.text-section a');
-  const image = document.querySelector('.animation-section img');
+  const image = document.getElementById('animation-block');
 
-  links.forEach(link => {
+
+
+  const hoverOne = document.getElementById('hoverOne');
+  const hoverTwo = document.getElementById('hoverTwo');
+  const hoverThree = document.getElementById('hoverThree');
+
+  hoverOne.addEventListener('mouseover', () => {
+    image.style.opacity = '1';
+    image.style.right = '0';
+    image.src = '/src/assets/button-hover-image.svg'
+  });
+
+  hoverOne.addEventListener('mouseout', () => {
+    image.style.opacity = '0';
+    image.style.right = '-100%';
+    image.src = '/src/assets/button-hover-image.svg'
+  });
+
+  hoverTwo.addEventListener('mouseover', () => {
+    image.style.opacity = '1';
+    image.style.right = '0';
+    image.src = '/src/assets/dropdown.svg'
+  });
+
+  hoverTwo.addEventListener('mouseout', () => {
+    image.style.opacity = '0';
+    image.style.right = '-100%';
+    image.src = '/src/assets/dropdown.svg'
+  });
+
+  hoverThree.addEventListener('mouseover', () => {
+    image.style.opacity = '1';
+    image.style.right = '0';
+    image.src = '/src/assets/pills.svg'
+  });
+
+  hoverThree.addEventListener('mouseout', () => {
+    image.style.opacity = '0';
+    image.style.right = '-100%';
+    image.src = '/src/assets/pills.svg'
+  });
+
+  /*links.forEach(link => {
     link.addEventListener('mouseover', () => {
       image.style.opacity = '1';
       image.style.right = '0';
@@ -140,7 +182,7 @@ window.addEventListener('DOMContentLoaded', () => {
       image.style.opacity = '0';
       image.style.right = '-100%';
     });
-  });
+  });*/
 });
 </script>
 
@@ -425,7 +467,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   .title-section h3 {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    font-size: 2.75rem;
   }
 
   .resource-item {
@@ -463,18 +506,32 @@ window.addEventListener('DOMContentLoaded', () => {
 
 @media only screen and (min-width: 2000px) {
   .hero {
-    padding: 0 300px 0 300px;
+    padding: 0 80px 0 80px;
     margin-left: 20vw;
   }
 
   .hero-content-block {
-    padding: 0 300px 0 300px;
+    padding: 0 80px 0 80px
+
   }
 
   .page-seperator {
-    padding: 0 300px 0 300px;
+    padding: 0 80px 0 80px;
     margin-top: 150px;
     margin-bottom: 150px;
+  }
+
+  .resource-item {
+    width: 350px;
+    margin-bottom: 35px;
+  }
+
+  .resource-item a {
+    font-size: 2.3rem;
+  }
+
+  .animation-section img {
+    width: 1250px;
   }
 
   .hero-banner h3 {
@@ -487,11 +544,13 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   .content-button h3 {
-    font-size: 3rem;
+    font-size: 4rem;
+    margin-bottom: 20px;
   }
 
   .content-button p {
-    font-size: 1.50rem;
+    font-size: 2.24rem;
+    margin-bottom: 25px;
   }
 
   .tile {

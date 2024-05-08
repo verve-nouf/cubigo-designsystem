@@ -46,11 +46,15 @@ footer {
   padding: 45px;
 }
 
+
+
 .external-links {
   display: flex;
   list-style: none;
   column-gap: 1em;
 }
+
+
 
 .footer-sepator {
   padding-top: 65px;
@@ -60,11 +64,30 @@ footer {
   .footer {
     margin-left: 0 !important;
   }
+
+  .external-links {
+    flex-direction: column;
+    row-gap: 0.5em;
+  }
+
+
 }
 
 @media only screen and (max-width: 768px) {
   .footer {
     margin-left: 30vw;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+
+
+  .external-links li a {
+    font-size: 2rem;
+  }
+
+  .footer-content h3 {
+    font-size: 2rem;
   }
 }
 

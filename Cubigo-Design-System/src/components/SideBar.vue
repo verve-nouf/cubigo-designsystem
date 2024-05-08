@@ -357,7 +357,8 @@ export default {
   }
 
   .search-bar input {
-    height: 40px;
+    height: 60px;
+    font-size: 1rem;
   }
 
   .sub-items .sub-item {

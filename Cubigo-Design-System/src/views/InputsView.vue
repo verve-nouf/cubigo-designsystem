@@ -198,6 +198,35 @@ export default {
   margin-bottom: 120px;
 }
 
+@media only screen and (min-width: 2000px) {
+  .hero-title-contentblock h1 {
+    font-size: 5rem;
+  }
+  .hero-title .hero-title-contentblock .mini-title {
+  font-size: 2.25rem;
+  }
+
+  .hero-title-contentblock .description {
+    font-size: 2.25rem;
+  }
+
+  .article-content .article-header h2 {
+    font-size: 3rem;
+  }
+
+  .article-paragraph p {
+    font-size: 1.5rem;
+  }
+
+  .article-subheader h3 {
+    font-size: 2rem;
+  }
+
+  .article-image img {
+    width: 75%;
+  }
+}
+
 @media only screen and (max-width: 414px) {
   .article-image img {
     width: 100%;
